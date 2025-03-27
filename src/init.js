@@ -31,7 +31,7 @@ export default () => {
     modalClose: document.querySelector('[data-modal-close]'),
   };
 
-  const texts = {
+  const i18Elements = {
     heading: document.querySelector('[data-heading]'),
     subheading: document.querySelector('[data-subheading]'),
     RSSLink: document.querySelector('[data-label]'),
@@ -52,13 +52,13 @@ export default () => {
 
   checkForUpdates(watchedState, i18nextInstance);
 
-  // const applyTranslations = () => {
-  //   Object.keys(texts).forEach((nodeName) => {
-  //     texts[nodeName].textContent = i18nextInstance.t(nodeName);
-  //   });
-  // };
+  const applyTranslations = () => {
+    Object.keys(i18Elements).forEach((el) => {
+      i18Elements[el].textContent = i18nextInstance.t(el);
+    });
+  };
 
-  // applyTranslations();
+  applyTranslations();
 
   yup.setLocale(locale);
   const schema = yup.string().url().required();
@@ -90,17 +90,5 @@ export default () => {
       });
   };
 
-  // const handleInputTyping = (e) => {
-  //   e.target.setCustomValidity('');
-  // };
-
-  // const handleInputValidation = (e) => {
-  //   if (e.target.value.length === 0) {
-  //     e.target.setCustomValidity(i18nextInstance.t('errors.required'));
-  //   }
-  // };
-
   elements.form.addEventListener('submit', (e) => handleFormSubmit(e));
-  // elements.input.addEventListener('input', (e) => handleInputTyping(e));
-  // elements.input.addEventListener('invalid', (e) => handleInputValidation(e));
 };
