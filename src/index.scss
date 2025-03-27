@@ -1,0 +1,28 @@
+$primary: #0abb86;
+
+@import '~bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap');
+
+$font_family: 'Nunito', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
+
+::selection {
+  background-color: $primary;
+  color: white;
+}
+
+body {
+  font-family: $font_family;
+}
+
+main {
+  background: linear-gradient(90deg, #031c30 0%, #043941 100%) !important;
+}
+
+footer {
+  background: linear-gradient(90deg, #11283b 0%, #12444b 100%);
+}
+
+.text-muted {
+  color: white !important;
+  opacity: 0.25;
+}
