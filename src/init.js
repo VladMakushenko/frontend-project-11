@@ -7,6 +7,8 @@ import loadRss from './rss/loadRss.js';
 import checkForUpdates from './rss/checkForUpdates.js';
 
 export default () => {
+  const defaultLanguage = 'ru';
+
   const state = {
     form: {
       value: '',
@@ -15,7 +17,7 @@ export default () => {
     urls: [],
     feeds: [],
     posts: [],
-    language: 'ru',
+    language: defaultLanguage,
   };
 
   const elements = {
@@ -48,7 +50,6 @@ export default () => {
   });
 
   const watchedState = watchState(state, elements, i18nextInstance);
-  console.warn(watchedState);
 
   checkForUpdates(watchedState, i18nextInstance);
 
