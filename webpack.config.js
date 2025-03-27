@@ -40,9 +40,4 @@ export default {
   output: {
     clean: true,
   },
-  devServer: {
-    client: {
-      logging: 'none', // 'none', 'warn', 'error', 'info'
-    },
-  },
 };
