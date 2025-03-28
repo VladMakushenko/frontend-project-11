@@ -28,12 +28,6 @@ const createPost = (post, state, elements, i18nextInstance) => {
 
     link.classList.remove('fw-bold');
     link.classList.add('fw-normal', 'link-secondary');
-
-    // if (post.isRead) {
-    //   link.classList.add('fw-normal', 'link-secondary');
-    // } else {
-    //   link.classList.add('fw-bold');
-    // }
   });
 
   button.addEventListener('click', (e) => {
@@ -45,12 +39,6 @@ const createPost = (post, state, elements, i18nextInstance) => {
 
     link.classList.remove('fw-bold');
     link.classList.add('fw-normal', 'link-secondary');
-
-    // if (post.isRead) {
-    //   link.classList.add('fw-normal', 'link-secondary');
-    // } else {
-    //   link.classList.add('fw-bold');
-    // }
 
     setModalContent(elements, post);
   });

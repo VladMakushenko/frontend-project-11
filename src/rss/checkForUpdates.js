@@ -16,7 +16,6 @@ const checkForUpdates = (state, i18nextInstance, delay = 5000) => {
   if (state.feeds.length > 0) {
     state.urls.forEach((url) => {
       getUniquePosts(url).then((posts) => {
-        // console.warn('unique posts => ', posts);
         // state.posts.push(...posts);
         [].concat(state.posts, posts);
       });

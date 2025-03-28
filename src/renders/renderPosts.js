@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+
 import createTitleCard from './createTitleCard.js';
 import createPost from './createPost.js';
 

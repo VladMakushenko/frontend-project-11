@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+
 import onChange from 'on-change';
 import renderPosts from './renders/renderPosts.js';
 import renderFeeds from './renders/renderFeeds.js';
