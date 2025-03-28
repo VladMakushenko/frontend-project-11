@@ -1,9 +1,8 @@
+$font_family: 'Nunito', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
 $primary: #0abb86;
 
 @import '~bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap');
-
-$font_family: 'Nunito', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
 
 ::selection {
   background-color: $primary;

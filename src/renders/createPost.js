@@ -9,6 +9,7 @@ const createPost = (post, state, elements, i18nextInstance) => {
   link.setAttribute('href', post.href);
   link.setAttribute('rel', 'noopener noreferrer');
   link.setAttribute('target', '_blank');
+  link.classList.add('fw-bold');
   link.textContent = post.title;
 
   const button = document.createElement('button');
@@ -25,11 +26,14 @@ const createPost = (post, state, elements, i18nextInstance) => {
     const statePost = state.posts.find((el) => el.id === id);
     statePost.isRead = true;
 
-    if (post.isRead) {
-      link.classList.add('fw-normal', 'link-secondary');
-    } else {
-      link.classList.add('fw-bold');
-    }
+    link.classList.remove('fw-bold');
+    link.classList.add('fw-normal', 'link-secondary');
+
+    // if (post.isRead) {
+    //   link.classList.add('fw-normal', 'link-secondary');
+    // } else {
+    //   link.classList.add('fw-bold');
+    // }
   });
 
   button.addEventListener('click', (e) => {
@@ -39,11 +43,14 @@ const createPost = (post, state, elements, i18nextInstance) => {
     const statePost = state.posts.find((el) => el.id === id);
     statePost.isRead = true;
 
-    if (post.isRead) {
-      link.classList.add('fw-normal', 'link-secondary');
-    } else {
-      link.classList.add('fw-bold');
-    }
+    link.classList.remove('fw-bold');
+    link.classList.add('fw-normal', 'link-secondary');
+
+    // if (post.isRead) {
+    //   link.classList.add('fw-normal', 'link-secondary');
+    // } else {
+    //   link.classList.add('fw-bold');
+    // }
 
     setModalContent(elements, post);
   });
