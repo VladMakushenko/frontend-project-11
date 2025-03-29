@@ -3,10 +3,6 @@ const parseRssInfo = (rss) => {
   const description = rss.querySelector('description');
   const items = [...rss.querySelectorAll('item')];
 
-  if (!title || !description || !items.length) {
-    throw new Error('noData');
-  }
-
   return {
     title: title.textContent,
     description: description.textContent,

@@ -1,10 +1,13 @@
+/* eslint-disable no-unused-vars */
+
+import Modal from 'bootstrap/js/dist/modal.js';
 import * as yup from 'yup';
 import i18n from 'i18next';
 import resources from './locales/index.js';
 import locale from './locales/yup.js';
 import watchState from './watcher.js';
-import loadRss from './rss/loadRss.js';
 import checkForUpdates from './rss/checkForUpdates.js';
+import handleFormSubmit from './handlers/handleFormSubmit.js';
 
 export default () => {
   const defaultLanguage = 'ru';
@@ -64,32 +67,7 @@ export default () => {
   yup.setLocale(locale);
   const schema = yup.string().url().required();
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
+  const postModal = new Modal(elements.modal);
 
-    watchedState.form.value = elements.input.value.trim();
-
-    schema
-      .notOneOf(watchedState.urls)
-      .validate(watchedState.form.value)
-      .then((url) => {
-        watchedState.urls.push(url);
-
-        return loadRss(watchedState.form.value, watchedState, i18nextInstance)
-          .then(({ posts, feed }) => {
-            watchedState.posts.push(...posts);
-            watchedState.feeds.push(feed);
-            watchedState.form.error = null;
-
-            elements.form.reset();
-            elements.input.focus();
-          });
-      })
-      .catch(({ errors }) => {
-        const keys = errors.map(({ key }) => i18nextInstance.t(`errors.${key}`));
-        [watchedState.form.error] = keys;
-      });
-  };
-
-  elements.form.addEventListener('submit', (e) => handleFormSubmit(e));
+  elements.form.addEventListener('submit', (e) => handleFormSubmit(e, watchedState, elements, i18nextInstance, schema));
 };
