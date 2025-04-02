@@ -3,25 +3,16 @@
 import Modal from 'bootstrap/js/dist/modal.js';
 import * as yup from 'yup';
 import i18n from 'i18next';
+import state from './models/state.js';
 import resources from './locales/index.js';
 import locale from './locales/yup.js';
-import watchState from './watcher.js';
-import checkForUpdates from './rss/checkForUpdates.js';
-import handleFormSubmit from './handlers/handleFormSubmit.js';
+import watchState from './views/watcher.js';
+import checkForUpdates from './controllers/rss/checkForUpdates.js';
+import handleFormSubmit from './controllers/handlers/handleFormSubmit.js';
 
 export default () => {
   const defaultLanguage = 'ru';
-
-  const state = {
-    form: {
-      value: '',
-      error: '',
-    },
-    urls: [],
-    feeds: [],
-    posts: [],
-    language: defaultLanguage,
-  };
+  state.language = defaultLanguage;
 
   const elements = {
     form: document.querySelector('[data-form]'),

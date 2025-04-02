@@ -1,8 +1,8 @@
 /* eslint-disable no-param-reassign */
 
 import onChange from 'on-change';
-import renderPosts from './renders/renderPosts.js';
-import renderFeeds from './renders/renderFeeds.js';
+import renderPosts from '../controllers/renders/renderPosts.js';
+import renderFeeds from '../controllers/renders/renderFeeds.js';
 
 const watchState = (state, elements, i18nInstance) => {
   const watchedState = onChange(state, (path, error) => {
