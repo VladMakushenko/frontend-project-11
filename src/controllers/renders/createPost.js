@@ -2,7 +2,7 @@ import setModalContent from './setModalContent.js';
 
 const createPost = (post, state, elements, i18nextInstance) => {
   const item = document.createElement('li');
-  item.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center', 'bg-transparent', 'border-0', 'gap-2');
+  item.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center', 'border-0', 'gap-2');
 
   const link = document.createElement('a');
   link.setAttribute('data-id', post.id);
